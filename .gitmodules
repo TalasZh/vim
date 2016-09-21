@@ -49,3 +49,9 @@
 [submodule "bundle/colorschemes"]
 	path = bundle/colorschemes
 	url = https://github.com/flazz/vim-colorschemes.git
+[submodule "bundle/youcompleteme"]
+	path = bundle/youcompleteme
+	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "bundle/tern_for_vim"]
+	path = bundle/tern_for_vim
+	url = https://github.com/ternjs/tern_for_vim.git

@@ -8,13 +8,16 @@ syntax on
 "filetype plugin indent on
 "set background dark
 set t_Co=256
-colorscheme desert256
-set background=dark
+"colorscheme desert256
+"set background=dark
 set foldlevel=99
 "colorscheme morning
 
 
 " vim-indent-guides
+set ts=2 sw=2 et
+let g:indent_guides_start_level = 2
+
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
@@ -79,3 +82,8 @@ nmap <F8> :TagbarToggle<CR>
 " ctrl-space
 "set nocompatible
 "set hidden
+
+" youcompleteme
+let g:ycm_add_preview_to_completeopt=0
+let g:ycm_confirm_extra_conf=0
+set completeopt-=preview
