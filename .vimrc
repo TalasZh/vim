@@ -1,7 +1,7 @@
 """"""" Pathogen
 
 " To disable a plugin, add it's bundle name to the following list
-let g:pathogen_disabled = []
+let g:pathogen_disabled = ['vim-snipmate']
 
 " for some reason the csscolor plugin is very slow when run on the terminal
 " but not in GVim, so disable it if no GUI is running
@@ -24,6 +24,7 @@ endif
 execute pathogen#infect()
 
 
+set nopaste
 syntax on
 "filetype plugin indent on
 "set background dark
@@ -76,9 +77,15 @@ let g:javascript_plugin_flow = 1
 set foldmethod=syntax
 
 """"""" snipMate
-let g:snipMate = {}
+"imap <Tab> <Plug>snipMateNextOrTrigger
+"smap <Tab> <Plug>snipMateNextOrTrigger
+let g:snipMate = get(g:, 'snipMate', {}) " Allow for vimrc re-sourcing
 let g:snipMate.scope_aliases = {}
-let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9'
+let g:snipMate.scope_aliases['ruby'] = 'ruby,rails'
+
+"let g:snipMate = {}
+"let g:snipMate.scope_aliases = {}
+"let g:snipMate.scope_aliases['ruby'] = 'ruby,ruby-rails,ruby-1.9'
 
 """"""" vim-snippets
 " assuming you want to use snipmate snippet engine
@@ -121,3 +128,25 @@ nmap <F8> :TagbarToggle<CR>
 let g:ycm_add_preview_to_completeopt=0
 let g:ycm_confirm_extra_conf=0
 set completeopt-=preview
+
+
+""""""" UltiSnips
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+au FileType javascript :UltiSnipsAddFiletypes javascript
+
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
