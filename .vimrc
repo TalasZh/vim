@@ -22,6 +22,10 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
+" tern_for_vim
+let g:tern_show_argument_hints='on_hold'
+" and 
+let g:tern_map_keys=1
 
 " syntastic
 set statusline+=%#warningmsg#
