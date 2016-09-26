@@ -67,3 +67,12 @@
 [submodule "bundle/ultisnips"]
 	path = bundle/ultisnips
 	url = https://github.com/sirver/ultisnips
+[submodule "bundle/vim-compiler-go"]
+	path = bundle/vim-compiler-go
+	url = https://github.com/rjohnsondev/vim-compiler-go.git
+[submodule "bundle/vim-godef"]
+	path = bundle/vim-godef
+	url = https://github.com/dgryski/vim-godef
+[submodule "bundle/vim-go-extra"]
+	path = bundle/vim-go-extra
+	url = https://github.com/vim-jp/vim-go-extra.git
